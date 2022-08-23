@@ -1,0 +1,11 @@
+nav {
+    background-color: purple;
+    color: white;
+    display: flex;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: white
+}

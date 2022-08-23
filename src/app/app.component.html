@@ -1,0 +1,15 @@
+<nav>
+  <button>
+      Github User Search
+  </button>
+  <button
+    routerLink="/">
+      Home
+  </button>
+  <button
+    routerLink="/followers">
+      Following
+  </button>
+  <app-search-bar (onType)="onSubmit($event)"></app-search-bar>
+</nav>
+<router-outlet></router-outlet>

@@ -1,0 +1,7 @@
+<form>
+    <input
+        [formControl]="searchForm"
+        (keyup)="debounceEmit()" />
+</form>
+
+        <!-- (keyup)="onType.emit(searchForm)" -->

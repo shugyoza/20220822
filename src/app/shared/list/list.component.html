@@ -1,0 +1,7 @@
+<p>list works!</p>
+<ng-container *ngIf="items">
+    <app-card
+        *ngFor="let item of items"
+        [item]="item">
+    </app-card>
+</ng-container>

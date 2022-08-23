@@ -1,0 +1,10 @@
+img {
+    width: 5rem
+}
+.card {
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
