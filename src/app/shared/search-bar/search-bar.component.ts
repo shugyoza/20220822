@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs';
-import { ApiService } from 'src/app/api-service/api.service';
+import { ApiService } from '../../api-service/api.service';
 
 @Component({
   selector: 'app-search-bar',
