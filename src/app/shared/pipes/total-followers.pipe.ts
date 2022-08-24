@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ApiService } from 'src/app/api-service/api.service';
+import { ApiService } from '../../api-service/api.service';
 
 @Pipe({
   name: 'totalFollowers'
