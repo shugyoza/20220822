@@ -1,7 +1,15 @@
-<p>list works!</p>
-<ng-container *ngIf="items">
+<div
+    class="list"
+    *ngIf="items">
+
     <app-card
-        *ngFor="let item of items"
+        *ngFor="let item of displayedItems"
         [item]="item">
     </app-card>
-</ng-container>
+
+    <button
+        [disabled]="items.length === displayedItems.length"
+        (click)="showMore(displayedItems.length)">
+        Show More
+    </button>
+</div>

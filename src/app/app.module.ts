@@ -15,7 +15,7 @@ import { SharedModule } from './shared/shared.module';
   declarations: [
     AppComponent,
     UsersListComponent,
-    FollowersListComponent,
+    FollowersListComponent
   ],
   imports: [
     BrowserModule,

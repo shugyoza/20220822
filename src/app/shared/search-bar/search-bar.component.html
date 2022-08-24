@@ -1,7 +1,8 @@
 <form>
     <input
         [formControl]="searchForm"
-        (keyup)="debounceEmit()" />
+        (keyup)="debounceEmit()"
+        placeholder="e.g. githubUsername" />
 </form>
 
         <!-- (keyup)="onType.emit(searchForm)" -->

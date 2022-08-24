@@ -1,6 +1,9 @@
-<div class="card">
+<button
+    class="card"
+    (click)="selectUser(item)"
+    >
     <img *ngIf="item.avatar_url"
         src={{item.avatar_url}}
         alt="avatar">
     <p>Username: {{item.login}}</p>
-</div>
+</button>

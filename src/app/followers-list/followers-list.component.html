@@ -1,2 +1,12 @@
-followers list works
-<app-list></app-list>
+<div class="list">
+
+    <app-list
+        *ngIf="followers && followers.length else noFollowers"
+        [items]="followers">
+    </app-list>
+
+</div>
+
+<ng-template #noFollowers>
+    There is no Follower to display
+</ng-template>

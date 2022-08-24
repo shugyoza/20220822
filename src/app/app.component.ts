@@ -14,12 +14,10 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private api: ApiService) { }
 
   onSubmit(_query: string = ''): void {
-    console.log(17, _query)
     this.api.getUsers(_query);
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {  }
 
   ngOnDestroy(): void {
     this.subscriptions$.forEach((sub$: Subscription) => sub$.unsubscribe());

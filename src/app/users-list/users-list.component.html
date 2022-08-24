@@ -1,4 +1,12 @@
-users list works
-<ng-container>
-    <app-list [items]="(users$ | async)?.items"></app-list>
-</ng-container>
+<div class="list">
+
+    <app-list
+        *ngIf="(users$ | async)?.items && (users$ | async)?.items.length else noUsers"
+        [items]="(users$ | async)?.items">
+    </app-list>
+
+</div>
+
+<ng-template #noUsers>
+    There is no User to display
+</ng-template>

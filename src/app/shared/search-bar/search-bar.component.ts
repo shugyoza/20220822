@@ -21,9 +21,6 @@ export class SearchBarComponent implements OnInit, OnDestroy {
   searchForm = new FormControl('');
 
   debounceEmit(): void {
-    // this.subscriptions$.push(
-    //   this.api.debounceInput(this.searchForm.valueChanges, 600, this.subscriptions$)
-    // )
     this.subscriptions$.push(
       this.api.debounceInput(this.searchForm.valueChanges, this.onType, 600, this.subscriptions$)
     )

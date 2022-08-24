@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TotalFollowersPipe } from './pipes/total-followers.pipe';
+
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ListComponent } from './list/list.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -12,7 +14,8 @@ import { CardComponent } from './card/card.component';
   declarations: [
     SearchBarComponent,
     ListComponent,
-    CardComponent
+    CardComponent,
+    TotalFollowersPipe
   ],
   imports: [
     CommonModule,
@@ -21,7 +24,8 @@ import { CardComponent } from './card/card.component';
   exports: [
     SearchBarComponent,
     ListComponent,
-    CardComponent
+    CardComponent,
+    TotalFollowersPipe
   ]
 })
 export class SharedModule { }

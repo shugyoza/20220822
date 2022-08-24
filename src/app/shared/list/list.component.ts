@@ -9,9 +9,16 @@ import { BehaviorSubject } from 'rxjs';
 export class ListComponent implements OnInit {
 
   @Input() items: any[] = [];
+  @Input() displayedItems: any[] = [];
 
   constructor() { }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void {
+    this.displayedItems = this.items.slice(0, 10)
+  }
 
+  showMore(len: number): void {
+    let newLen = len ? len + 10 : 10;
+    this.displayedItems = this.items.slice(0, newLen);
+  }
 }

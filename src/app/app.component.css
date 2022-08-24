@@ -2,6 +2,9 @@ nav {
     background-color: purple;
     color: white;
     display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 button {

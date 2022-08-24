@@ -10,13 +10,15 @@ export class ApiService {
   path: string = `search/users`;
   // query: string = ?q=shugyoza in:login type:user
   users$ = new ReplaySubject<any>();
+  user$ = new ReplaySubject<any>();
+  followers$ = new ReplaySubject<any>();
 
   constructor(private http: HttpClient) { }
 
   fetchUsers(_q: string = '', _in: string = 'login', _type: string = 'user'): Observable<any>{
     const endPoint = `${this.root}/${this.path}?q=${_q} in:${_in} type:${_type}`;
     return this.http.get(endPoint)
-  }
+  };
 
   getUsers(_query: string = ''): Subscription {
     return this.fetchUsers(_query, 'login', 'user')
@@ -24,7 +26,7 @@ export class ApiService {
       next: (users: any[]) => this.users$.next(users),
       error: (err: Error) => console.error(err)
     });
-  }
+  };
 
   debounceInput(valChanges: any, eventEmitter: any, delay = 500, subscriptions$: any[]): void {
     subscriptions$.push(valChanges
@@ -33,6 +35,18 @@ export class ApiService {
       next: (val: string) => eventEmitter.emit(val),
       error: (err: Error) => console.error(err)
     }))
-  }
+  };
+
+  fetchFollowers(endPoint: string): Observable<any>{
+    return this.http.get(endPoint);
+  };
+
+  getFollowers(endPoint: string): Subscription {
+    return this.fetchFollowers(endPoint)
+    .subscribe({
+      next: (followers: any[]) => this.followers$.next(followers),
+      error: (err: Error) => console.error(err)
+    })
+  };
 
 }
